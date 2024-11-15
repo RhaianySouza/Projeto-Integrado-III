@@ -1,7 +1,7 @@
 <html>
 <head>
 
-<title>Sobre: Wise Teens</title>
+<title>Dicas: Wise Teens</title>
 <!--METATAG-->
 <meta charset='utf-8'/>
 <meta name='resource-type' content='document'/>
@@ -61,25 +61,19 @@ defina metas e explore conteúdos interativos para alcançar seus objetivos fina
 <meta content='#1a4201' media='(prefers-color-scheme: light)' name='theme-color'/>
 
 <style>
+    nav ol li:nth-child(3) a {
+        color: var(--cor6);
+    }
     nav ol li:first-child a {
         margin-left: 0;
         color: var(--cor1);
     }
-    main #metas{
-        height: 500px;
-    }
-    main #metas .container{
-        height: calc(100% - 200px);
-    }
+
     footer .atribuiçao{
         margin: 0 auto;
     }
     .container h2,.container hr{
         grid-column: span 12;
-    }
-    main{
-        background: var(--cor6);
-        color: var(--cor2);
     }
     .container h2{
         color: var(--cor2);
@@ -93,10 +87,18 @@ defina metas e explore conteúdos interativos para alcançar seus objetivos fina
         position: relative;
         z-index: 1;
     }
-    .container>div{
-        grid-column: span 6;
-        text-align: justify;
-        padding: 0 15px;
+    #image1{
+	opacity: .1;
+	float: left;
+	position: absolute;
+	margin: 10px 0px;
+    }
+    #image2{
+        opacity: .1;
+        right: 0;
+        position: absolute;
+        height: 400px;
+        margin: 50px 0 0 0;
     }
     </style>
 </head>
@@ -118,29 +120,11 @@ defina metas e explore conteúdos interativos para alcançar seus objetivos fina
         <div class="container"><img src="../IMAGE/logo.png" alt="Wise Teens logo" id="logo"/></div>
         <a href="../PAGINAS/Questionario.html" id="button">Teste seus Conhecimentos </a>
     </header>
-
-
 <main>
+    <img src="./ELEMENT/element_02.png" id="image1"/>
+	<img src="./ELEMENT/element_01.png" id="image2"/>
     <div class="container">
-        <h2>Sobre o Projeto: Educação Financeira</h2><hr/>
-        <div>
-            
-            <h3>Projeto Integrado III - 5º Período</h3>
-            <p>Este projeto é uma iniciativa do 5º período do curso de <b>Sistemas de Informação</b> da universidade <b>UniFOA</b>, orientado pela professora <b>Sirlei Bubnoff</b>. O objetivo do projeto é desenvolver uma plataforma inovadora e educacional. As equipes foram divididas com responsabilidades específicas para garantir a organização e eficiência no desenvolvimento da plataforma:</p>
-        </div> 
-        <div>  
-            <h4>Equipe 1: Elaboração da Plataforma</h4>
-            <p>Responsável pelo desenvolvimento técnico e implementação da plataforma.</p>
-            <p><b>Integrantes:</b> Renan, Arthur, Rhaiany Souza, David Lima, Danilo A. Suzano, Danilo do Carmo, Leonardo Rocha, Adriele, Connor.</p>
-            
-            <h4>Equipe 2: Elaboração do Roteiro de Informações</h4>
-            <p></p>Responsável por definir e organizar as principais informações que a plataforma deve apresentar, garantindo que o conteúdo seja completo e de fácil compreensão para o público-alvo.</p>
-            <p><b>Integrantes:</b> Pedro, Augusto, Leonardo Britto, Luiza Dias, Renata, Samuel Ribeiro, Victor, Marcus, Samuel Lima, Arthur Fonseca, Ana, Leonardo Botelho.
-            
-                <h4>Equipe 3: Coleta de Informações</h4>
-            <p>Responsável por conduzir reuniões com alunos e professores para coletar dados e informações essenciais que guiarão a construção e o conteúdo da plataforma.</p>
-            <p><b>Integrantes:</b> David, Guilherme, Eric.</p>
-        </div> 
+        <h2>Dicas do Wise Teens</h2><hr/>
     </div>
 </main>
 <footer>
