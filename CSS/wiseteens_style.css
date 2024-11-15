@@ -8,7 +8,7 @@
 }
 ::selection {
 	color: var(--cor1);
-	background: #ff9f2c;
+	background: #ff5e2c;
 }
 ::-webkit-scrollbar {
 	width: 10px;
@@ -141,7 +141,7 @@ header a#button{
 	transition: all .5s;
 }
 header a#button:hover{
-	background: #ec8f5c;
+	background: #ff5e2c;
 	box-shadow: var(--cor6) 3px 3px;
 	color: var(--cor1)
 }
@@ -418,7 +418,7 @@ footer .calculadora form div i{
 }
 footer .calculadora form div p{
 	width: 250px;
-	background: #ff9f2c;
+	background: #ff5e2c;
 	box-shadow: #000 5px 5px 10px;
 	padding: 15px;
 	border-radius: 15px;
@@ -427,6 +427,7 @@ footer .calculadora form div p{
 	left: 25px;
 	z-index: 0;
 	visibility: hidden;
+	color: #fff;
 }
 footer .calculadora form div:hover p{
 	visibility: visible;
