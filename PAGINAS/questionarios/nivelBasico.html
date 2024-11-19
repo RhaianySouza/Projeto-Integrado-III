@@ -1,0 +1,334 @@
+<html>
+<head>
+
+<title>(Básico)Teste de Conhecimento</title>
+<!--METATAG-->
+<meta charset='utf-8'/>
+<meta name='resource-type' content='document'/>
+<meta name='content-language' content='pt-br' />
+<meta name='DC.title' content='Wise Teens'/>
+<meta name='viewport' content='width=device-width, initial-scale=1'/>
+<meta property='og:url' content='https://wiseteens.com/'/>
+<meta name='author' content='Rhaiany Souza, Rhaiany Cezar de Souza'/>
+
+<meta name='description' content='Wise Teens: Jovem Investidor é uma plataforma educativa para jovens que querem 
+aprender sobre investimentos e perfil financeiro de forma prática e divertida. Descubra o seu perfil de investidor, 
+defina metas e explore conteúdos interativos para alcançar seus objetivos financeiros desde cedo!'/>
+
+<meta name='keywords' content='investimentos para jovens, educação financeira, perfil de investidor, Wise Teens, jovem 
+investidor, metas financeiras, planejamento financeiro, aprender a investir, investimentos para iniciantes, 
+finanças pessoais, economia para jovens, dicas de investimento, plataforma educativa, finanças para adolescentes, 
+metas financeiras para estudantes, educação financeira escolar'/>
+
+<link rel="shortcut icon" type="image/png" href="./IMAGE/logo_icon.png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+
+<!--FACEBOOK-->
+<meta property='og:image' content=''/>
+<meta property='og:title' content='Wise Teens' />
+<meta property='og:site_name' content='Wise Teens'/>
+<meta property='og:url' content='https://#wiseteens#.com/'/>
+<meta property='og:description' content='Wise Teens: Jovem Investidor é uma plataforma educativa para jovens que querem 
+aprender sobre investimentos e perfil financeiro de forma prática e divertida. Descubra o seu perfil de investidor, 
+defina metas e explore conteúdos interativos para alcançar seus objetivos financeiros desde cedo!'/>
+<meta property='og:type' content='School'/>
+
+<!--TWITTER-->
+<meta name='twitter:card' content='summary'/>
+<meta name='twitter:image' content=''/>
+<meta name='twitter:title' content='Wise Teens'>
+<meta name='twitter:url' content='https://#wiseteens#.com/'/>
+<meta name='twitter:description' content='Wise Teens: Jovem Investidor é uma plataforma educativa para jovens que querem 
+aprender sobre investimentos e perfil financeiro de forma prática e divertida. Descubra o seu perfil de investidor, 
+defina metas e explore conteúdos interativos para alcançar seus objetivos financeiros desde cedo!'/>
+
+<!--DOC EXTERNOS-->
+<script src='../../JS/wiseteens_javascript.js' defer></script>
+<link rel="stylesheet" href="../../CSS/wiseteens_style.css"></link>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
+ 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+<!--FIM METATAG-->
+<meta content='#1a4201' name='theme-color'/>
+<meta content='#1a4201' name='apple-mobile-web-app-status-bar-style'/>
+<meta content='#1a4201' name='msapplication-navbutton-color'/>
+<meta content='#1a4201' media='(prefers-color-scheme: light)' name='theme-color'/>
+
+<style>
+    nav ol li:nth-child(2) a {
+        color: var(--cor6);
+    }
+    nav ol li:first-child a {
+        margin-left: 0;
+        color: var(--cor1);
+    }
+    footer .atribuiçao{
+        margin: 0 auto;
+    }
+    h3, form, #result{
+        grid-column: span 12;
+        color: var(--cor1);
+    }
+    #result{
+        margin: 50px auto;
+    }
+    main #metas {
+        height: fit-content;
+    }
+    .button{
+	background: var(--cor5);
+	color: var(--cor4);
+	transition: .3s;
+	box-shadow: #000 2px 2px 10px;
+	margin-top: 25px;
+	font-weight: bold;
+	font-size: 16px;
+    padding: 10px;
+	border-radius: 5px;
+	border: none;
+	width: 100%;
+	margin: 20px auto;
+    }
+    .button:hover{
+        background: #ff5e2c;
+        color: var(--cor1);
+    }
+    </style>
+    <script>
+const respostasCorretas = {
+    q1: "C", q2: "B", q3: "B", q4: "B", q5:"B", q6:"A", q7:"A", q8:"A", q9:"C", q10:"B", 
+    q11:"C", q12:"B", q13:"B", q14:"B", q15:"C", q16:"B",  q17:"B", q18:"C", q19:"B",  q20:"B"
+};
+
+function verificarRespostas() {
+    const form = document.getElementById('quizForm');
+    const resultDiv = document.getElementById('result');
+    let pontuacao = 0;
+    let total = Object.keys(respostasCorretas).length;
+
+    for (let key in respostasCorretas) {
+        const respostaSelecionada = form[key] ? form[key].value : null;
+        if (respostaSelecionada === respostasCorretas[key]) {
+            pontuacao++;
+        }
+    }
+
+    resultDiv.innerHTML = `
+        <h2>Resultado</h2><hr style="border-color: #ff5e2c;"/>
+        <p>Você acertou <strong>${pontuacao}</strong> de <strong>${total}</strong> questões.</p>
+        <p>${pontuacao / total >= 0.7 ? "Parabéns! Você tem um bom conhecimento sobre investimentos!" : "Continue estudando para melhorar seu conhecimento sobre investimentos."}</p>
+    `;
+}
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <ol id="menu">
+                    <li><a href="../index.html" target="top">Inicio</a></li>
+                    <li><a href="../Questionario.html" target="top">Questionário</a></li>
+                    <li><a href="../Dicas.html" target="top">Dicas</a></li>
+                    <li><a href="../Simulador.html" target="top">Simulador</a></li>
+                    <li><a href="../Notícias.html" target="top">Notícias</a></li>
+                    <li><a href="../Perfil.html" target="top">Perfil</a></li>
+                </ol>
+                <div id="about"><a href="../Sobre.html" target="top">Sobre o Projeto</a></div>
+            </div>
+        </nav>
+        <div class="container"><img src="../../IMAGE/logo.png" alt="Wise Teens logo" id="logo"/></div>
+        <a href="../Questionario.html" id="button">Teste seus Conhecimentos </a>
+    </header>
+
+
+<main>
+    <div id="metas">
+        <h2>O quanto você conhece o mercado financeiro?</h2><hr/>
+        
+        <div class="container">
+            <h3>Teste de Conhecimento Basico</h3>
+            <form id="quizForm">
+
+                <!-- Questões -->
+                <div class="question">
+                    <p>1. O que é um investimento?</p>
+                    <label><input type="radio" name="q1" value="A"> A) Um produto que você compra e vende no mercado</label><br>
+                    <label><input type="radio" name="q1" value="B"> B) O ato de guardar dinheiro na poupança</label><br>
+                    <label><input type="radio" name="q1" value="C"> C) O ato de aplicar seu dinheiro com o objetivo de obter um retorno maior no futuro</label><br>
+                    <label><input type="radio" name="q1" value="D"> D) Um tipo de conta bancária</label><br>
+                    <label><input type="radio" name="q1" value="E"> E) Um tipo de empréstimo</label>
+                </div>
+                <div class="question">
+                    <p>2. Qual é o principal objetivo de investir?</p>
+                    <label><input type="radio" name="q2" value="A"> A) Gastar todo o dinheiro em lazer</label><br>
+                    <label><input type="radio" name="q2" value="B"> B) Obter um retorno financeiro no futuro</label><br>
+                    <label><input type="radio" name="q2" value="C"> C) Comprar coisas caras no presente</label><br>
+                    <label><input type="radio" name="q2" value="D"> D) Guardar dinheiro sem nenhum risco</label><br>
+                    <label><input type="radio" name="q2" value="E"> E) Fazer compras online</label>
+                </div>
+                <div class="question">
+                    <p>3. O que significa a sigla "CDB"?</p>
+                    <label><input type="radio" name="q3" value="A"> A) Crédito de Banco</label><br>
+                    <label><input type="radio" name="q3" value="B"> B) Certificado de Depósito Bancário</label><br>
+                    <label><input type="radio" name="q3" value="C"> C) Caixa de Débitos Bancários</label><br>
+                    <label><input type="radio" name="q3" value="D"> D) Conta de Depósitos Bancários</label><br>
+                    <label><input type="radio" name="q3" value="E"> E) Câmbio de Débito Bancário</label>
+                </div>
+                <div class="question">
+                    <p>4. Qual é a característica principal da poupança?</p>
+                    <label><input type="radio" name="q4" value="A"> A) Rentabilidade alta</label><br>
+                    <label><input type="radio" name="q4" value="B"> B) Rendimento fixo e baixo risco</label><br>
+                    <label><input type="radio" name="q4" value="C"> C) Alta volatilidade</label><br>
+                    <label><input type="radio" name="q4" value="D"> D) Possibilidade de perdas significativas</label><br>
+                    <label><input type="radio" name="q4" value="E"> E) Não tem liquidez</label>
+                </div>
+                <div class="question">
+                    <p>5. O que é uma ação?</p>
+                    <label><input type="radio" name="q5" value="A"> A) Um título de dívida emitido pelo governo</label><br>
+                    <label><input type="radio" name="q5" value="B"> B) Uma parte de uma empresa que pode ser comprada e vendida</label><br>
+                    <label><input type="radio" name="q5" value="C"> C) Um tipo de conta bancári</label><br>
+                    <label><input type="radio" name="q5" value="D"> D) Um empréstimo que você faz ao banco</label><br>
+                    <label><input type="radio" name="q5" value="E"> E) Um tipo de seguro</label>
+                </div>
+                <div class="question">
+                    <p>6. Qual é o risco principal de investir em ações?</p>
+                    <label><input type="radio" name="q6" value="A"> A) O risco de perder todo o dinheiro investido</label><br>
+                    <label><input type="radio" name="q6" value="B"> B) O risco de ter lucro fixo e garantido</label><br>
+                    <label><input type="radio" name="q6" value="C"> C) O risco de receber o valor investido de volta sem alteração</label><br>
+                    <label><input type="radio" name="q6" value="D"> D) O risco de taxas de juros muito baixas</label><br>
+                    <label><input type="radio" name="q6" value="E"> E) O risco de não poder retirar o dinheiro a qualquer momento</label>
+                </div>
+                <div class="question">
+                    <p>7. O que significa a sigla "IPCA"?</p>
+                    <label><input type="radio" name="q7" value="A"> A) Índice de Preços ao Consumidor Amplo</label><br>
+                    <label><input type="radio" name="q7" value="B"> B) Índice de Preço do Crédito Automático</label><br>
+                    <label><input type="radio" name="q7" value="C"> C) Índice de Preço do Câmbio Atual</label><br>
+                    <label><input type="radio" name="q7" value="D"> D) Índice de Pagamento de Contas Ativas</label><br>
+                    <label><input type="radio" name="q7" value="E"> E) Índice de Participação no Comércio Amplo</label>
+                </div>
+                <div class="question">
+                    <p>8. O que são "fundos imobiliários"?</p>
+                    <label><input type="radio" name="q8" value="A"> A) Fundos que investem em imóveis e têm o objetivo de gerar renda</label><br>
+                    <label><input type="radio" name="q8" value="B"> B) Fundos que investem apenas em ações de empresas do setor de tecnologia</label><br>
+                    <label><input type="radio" name="q8" value="C"> C) Fundos que emprestam dinheiro para empresas</label><br>
+                    <label><input type="radio" name="q8" value="D"> D) Fundos que compram imóveis para revenda apenas</label><br>
+                    <label><input type="radio" name="q8" value="E"> E) Fundos que aplicam em moedas estrangeiras</label>
+                </div>
+                <div class="question">
+                    <p>9. O que significa "rentabilidade" de um investimento?</p>
+                    <label><input type="radio" name="q9" value="A"> A) O valor total investido</label><br>
+                    <label><input type="radio" name="q9" value="B"> B) A quantidade de impostos que você paga sobre o investimento</label><br>
+                    <label><input type="radio" name="q9" value="C"> C) O retorno financeiro que você recebe sobre o valor investido</label><br>
+                    <label><input type="radio" name="q9" value="D"> D) O risco envolvido no investimento</label><br>
+                    <label><input type="radio" name="q9" value="E"> E) O valor que o banco cobra pelo investimento</label>
+                </div>
+                <div class="question">
+                    <p>10. O que é "liquidez" em um investimento?</p>
+                    <label><input type="radio" name="q10" value="A"> A) A taxa de juros que o investimento oferece</label><br>
+                    <label><input type="radio" name="q10" value="B"> B) A facilidade de resgatar o dinheiro investido sem grandes perdas</label><br>
+                    <label><input type="radio" name="q10" value="C"> C) A quantidade de dinheiro necessário para fazer o investimento</label><br>
+                    <label><input type="radio" name="q10" value="D"> D) O tempo que o investimento demora para gerar lucro</label><br>
+                    <label><input type="radio" name="q10" value="E"> E) O número de ações disponíveis para compra</label>
+                </div>
+                <div class="question">
+                    <p>11. Qual é a principal vantagem de um investimento de baixo risco?</p>
+                    <label><input type="radio" name="q11" value="A"> A) Alta rentabilidade</label><br>
+                    <label><input type="radio" name="q11" value="B"> B) Maior liquidez</label><br>
+                    <label><input type="radio" name="q11" value="C"> C) Menor possibilidade de perder dinheiro</label><br>
+                    <label><input type="radio" name="q11" value="D"> D) Maior garantia de lucros rápidos</label><br>
+                    <label><input type="radio" name="q11" value="E"> E) Menor cobrança de impostos</label>
+                </div>
+                <div class="question">
+                    <p>12. O que é o "Tesouro Direto"?</p>
+                    <label><input type="radio" name="q12" value="A"> A) Um tipo de conta bancária especial</label><br>
+                    <label><input type="radio" name="q12" value="B"> B) Títulos públicos emitidos pelo governo brasileiro para financiar a dívida pública</label><br>
+                    <label><input type="radio" name="q12" value="C"> C) Ações de empresas privadas</label><br>
+                    <label><input type="radio" name="q12" value="D"> D) Fundos de investimentos internacionais</label><br>
+                    <label><input type="radio" name="q12" value="E"> E) Títulos bancários emitidos por empresas</label>
+                </div>
+                <div class="question">
+                    <p>13. O que é "diversificação" de investimentos?</p>
+                    <label><input type="radio" name="q13" value="A"> A) Investir todo o dinheiro em um único ativo</label><br>
+                    <label><input type="radio" name="q13" value="B"> B) Distribuir os investimentos em diferentes tipos de ativos para reduzir riscos</label><br>
+                    <label><input type="radio" name="q13" value="C"> C) Investir apenas em imóveis</label><br>
+                    <label><input type="radio" name="q13" value="D"> D) Comprar ações de apenas uma empresa</label><br>
+                    <label><input type="radio" name="q13" value="E"> E) Manter todo o dinheiro na poupança</label>
+                </div>
+                <div class="question">
+                    <p>14. O que significa "juros compostos"?</p>
+                    <label><input type="radio" name="q14" value="A"> A) Juros que são calculados apenas sobre o valor inicial investido</label><br>
+                    <label><input type="radio" name="q14" value="B"> B) Juros que são calculados sobre o valor inicial mais os juros acumulados</label><br>
+                    <label><input type="radio" name="q14" value="C"> C) Juros que não mudam com o tempo</label><br>
+                    <label><input type="radio" name="q14" value="D"> D) Juros pagos diretamente ao investidor</label><br>
+                    <label><input type="radio" name="q14" value="E"> E) Juros que são pagos a cada 30 dias</label>
+                </div>
+                <div class="question">
+                    <p>15. O que é um "CDB de liquidez diária"?</p>
+                    <label><input type="radio" name="q15" value="A"> A) Um investimento em ações</label><br>
+                    <label><input type="radio" name="q15" value="B"> B) Um tipo de fundo imobiliário</label><br>
+                    <label><input type="radio" name="q15" value="C"> C) Um tipo de título de renda fixa que pode ser resgatado a qualquer momento</label><br>
+                    <label><input type="radio" name="q15" value="D"> D) Um investimento em criptomoedas</label><br>
+                    <label><input type="radio" name="q15" value="E"> E) Um investimento em imóveis</label>
+                </div>
+                <div class="question">
+                    <p>16. Qual é a principal vantagem de investir em "fundos DI"?</p>
+                    <label><input type="radio" name="q16" value="A"> A) Alta rentabilidade</label><br>
+                    <label><input type="radio" name="q16" value="B"> B) Baixo risco e rentabilidade estável</label><br>
+                    <label><input type="radio" name="q16" value="C"> C) Possibilidade de altos lucros rápidos</label><br>
+                    <label><input type="radio" name="q16" value="D"> D) Investimento em ações de empresas de grande porte</label><br>
+                    <label><input type="radio" name="q16" value="E"> E) Não é necessário pagar impostos</label>
+                </div>
+                <div class="question">
+                    <p>17. O que significa "rendimento fixo"?</p>
+                    <label><input type="radio" name="q17" value="A"> A) O valor do investimento que nunca muda</label><br>
+                    <label><input type="radio" name="q17" value="B"> B) O retorno do investimento é garantido e previsível</label><br>
+                    <label><input type="radio" name="q17" value="C"> C) O retorno varia de acordo com o mercado</label><br>
+                    <label><input type="radio" name="q17" value="D"> D) O retorno depende da performance de ações no mercado</label><br>
+                    <label><input type="radio" name="q17" value="E"> E)  O valor do investimento aumenta a cada dia</label>
+                </div>
+                <div class="question">
+                    <p>18. O que é "volatilidade" em investimentos?</p>
+                    <label><input type="radio" name="q18" value="A"> A) A estabilidade do investimento ao longo do tempo</label><br>
+                    <label><input type="radio" name="q18" value="B"> B) A capacidade do investimento de gerar lucros rapidamente</label><br>
+                    <label><input type="radio" name="q18" value="C"> C) A variação no valor de um ativo ao longo do tempo</label><br>
+                    <label><input type="radio" name="q18" value="D"> D) A segurança de um investimento</label><br>
+                    <label><input type="radio" name="q18" value="E"> E) O valor fixo que o investidor recebe</label>
+                </div>
+                <div class="question">
+                    <p>19. O que é uma "carteira de investimentos"?</p>
+                    <label><input type="radio" name="q19" value="A"> A) O valor total em dinheiro de um investidor</label><br>
+                    <label><input type="radio" name="q19" value="B"> B) A lista de todos os ativos que um investidor possui</label><br>
+                    <label><input type="radio" name="q19" value="C"> C) A quantidade de ações de uma única empresa</label><br>
+                    <label><input type="radio" name="q19" value="D"> D) Um tipo de conta bancária exclusiva para investimentos</label><br>
+                    <label><input type="radio" name="q19" value="E"> E) O saldo bancário de um investidor</label>
+                </div>
+                <div class="question">
+                    <p>20. Qual é a principal desvantagem de investir em ações?</p>
+                    <label><input type="radio" name="q20" value="A"> A) Alta rentabilidade garantida</label><br>
+                    <label><input type="radio" name="q20" value="B"> B) Risco de perda de parte ou todo o valor investido</label><br>
+                    <label><input type="radio" name="q20" value="C"> C) Não é necessário estudar o mercado</label><br>
+                    <label><input type="radio" name="q20" value="D"> D) Possibilidade de ganhar muito dinheiro de forma rápida</label><br>
+                    <label><input type="radio" name="q20" value="E"> E) Não exige nenhum esforço ou estratégia</label>
+                </div>
+                
+        
+                <button type="button" onclick="verificarRespostas()" class="button">Enviar Respostas</button>
+            </form>
+            <div id="result"></div>
+        </div>
+            
+    </div>
+</main>
+
+<footer>
+    <div class="atribuiçao">
+		<p>Copyright © 2024 Projeto integrado III. Todos os direitos reservados Gestão de Projetos III de 2024.2  5° Periodo</p>
+	</div>
+</footer>
+</body>
