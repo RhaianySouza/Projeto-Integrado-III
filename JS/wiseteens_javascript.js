@@ -4,7 +4,7 @@ function calcularInvestimentos(event) {
     const tempoMeses = parseInt(document.getElementById('tempo').value);
     const depositoMensal = parseFloat(document.getElementById('contribuicao').value);
 
-    console.log(valorMeta, tempoMeses, depositoMensal)
+    
     // Função para calcular o tempo necessário para atingir o valor de meta
     function calcularTempoParaMeta(meta, depositoMensal, taxaAnual) {
         const n = 12; // Número de meses por ano
@@ -41,17 +41,17 @@ function calcularInvestimentos(event) {
     function calcularMontante(taxa, tempo, depositoMensal) {
         let montante = 0;
         for (let i = 0; i < tempo; i++) {
-            montante = (montante + depositoMensal) * (1 + taxa/100/12);
+            montante = (montante + depositoMensal) * (1+taxa/100/12);
         }
         return montante.toFixed(2);
     }
 
     // Taxas de retorno anuais para cada tipo de investimento
     const taxasAnuais = {
-        poupanca: 6,       // Poupança (aproximadamente 6% ao ano)
-        selic: 13.75,      // Selic (aproximadamente 13.75% ao ano)
-        cdb: 11,           // CDBs de Liquidez Diária (aproximadamente 11% ao ano)
-        fundosDI: 10       // Fundos DI (aproximadamente 10% ao ano)
+        poupanca: 6.081,       // Poupança (aproximadamente 6% ao ano)
+        selic: 11.25,      // Selic (aproximadamente 13.75% ao ano)
+        cdb: 10.97,           // CDBs de Liquidez Diária (aproximadamente 11% ao ano)
+        fundosDI: 11.56       // Fundos DI (aproximadamente 10% ao ano)
     };
 
     // Calcular o tempo necessário para atingir o valor de meta para cada investimento
@@ -74,22 +74,22 @@ function calcularInvestimentos(event) {
         <p><strong>Contribuição Mensal:</strong> R$ ${depositoMensal.toFixed(2)}</p>
 
         <h4 style="text-decoration: underline; text-align: center; margin: 40px 0 0 0px;">Resultados por Tipo de Investimento:</h4>
-        <h4>Poupança (6% ao ano):</h4>
+        <h4>Poupança (${taxasAnuais.poupanca}% ao ano):</h4>
         <p>Investimento mínimo (${tempoMeses} meses): R$ ${contribPoupanca}</p>
         <p>Contribuição mensal (${tempoPoupanca} meses): R$ ${depositoMensal}</p>
         <p>Retabilidade (R$${depositoMensal} por ${tempoMeses} meses): R$ ${(calcularMontante(taxasAnuais.poupanca, tempoMeses, depositoMensal) - valorMeta).toFixed(2)}</p>
 
-        <h4>Selic (13.75% ao ano):</h4>
+        <h4>Selic (${taxasAnuais.selic}% ao ano):</h4>
         <p>Investimento mínimo (${tempoMeses} meses): R$ ${contribSelic}</p>
         <p>Contribuição mensal (${tempoSelic} meses): R$ ${depositoMensal}</p>
         <p>Retabilidade (R$${depositoMensal} por ${tempoMeses} meses): R$ ${(calcularMontante(taxasAnuais.selic, tempoMeses, depositoMensal) - valorMeta).toFixed(2)}</p>
 
-        <h4>CDBs de Liquidez Diária (11% ao ano):</h4>
+        <h4>CDBs de Liquidez Diária (${taxasAnuais.cdb}% ao ano):</h4>
         <p>Investimento mínimo (${tempoMeses} meses): R$ ${contribCDB}</p>
         <p>Retabilidade (R$${depositoMensal} por ${tempoMeses} meses): R$ ${depositoMensal}</p>
         <p>Retabilidade: R$ ${(calcularMontante(taxasAnuais.cdb, tempoMeses, depositoMensal) - valorMeta).toFixed(2)}</p>
 
-        <h4>Fundos DI (10% ao ano):</h4>
+        <h4>Fundos DI (${taxasAnuais.fundosDI}% ao ano):</h4>
         <p>Investimento mínimo (${tempoMeses} meses): R$ ${contribFundosDI}</p>
         <p>Contribuição mensal(${tempoFundosDI} meses): R$ ${depositoMensal}</p>
         <p>Retabilidade (R$${depositoMensal} por ${tempoMeses} meses): R$ ${(calcularMontante(taxasAnuais.fundosDI, tempoMeses, depositoMensal) - valorMeta).toFixed(2)}</p>`;
