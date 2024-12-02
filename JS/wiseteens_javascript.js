@@ -43,6 +43,7 @@ function calcularInvestimentos(event) {
         for (let i = 0; i < tempo; i++) {
             montante = (montante + depositoMensal) * (1+taxa/100/12);
         }
+        console.log(montante);
         return montante.toFixed(2);
     }
 
@@ -86,7 +87,7 @@ function calcularInvestimentos(event) {
 
         <h4>CDBs de Liquidez Diária (${taxasAnuais.cdb}% ao ano):</h4>
         <p>Investimento mínimo (${tempoMeses} meses): R$ ${contribCDB}</p>
-        <p>Retabilidade (R$${depositoMensal} por ${tempoMeses} meses): R$ ${depositoMensal}</p>
+        <p>Contribuição Mensal (R$${depositoMensal} por ${tempoMeses} meses): R$ ${depositoMensal}</p>
         <p>Retabilidade: R$ ${(calcularMontante(taxasAnuais.cdb, tempoMeses, depositoMensal) - valorMeta).toFixed(2)}</p>
 
         <h4>Fundos DI (${taxasAnuais.fundosDI}% ao ano):</h4>
