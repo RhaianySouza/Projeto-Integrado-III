@@ -78,24 +78,24 @@ function calcularInvestimentos(event) {
         <h4>Poupança (${taxasAnuais.poupanca}% ao ano):</h4>
         <p>Investimento mínimo (${tempoMeses} meses): R$ ${contribPoupanca}</p>
         <p>Contribuição mensal (${tempoPoupanca} meses): R$ ${depositoMensal}</p>
-        <p>Retabilidade (R$${depositoMensal} por ${tempoPoupanca} meses): R$ ${(calcularMontante(taxasAnuais.poupanca, tempoMeses, depositoMensal)-valorMeta)}</p>
+        <p>Retabilidade (R$${depositoMensal} por ${tempoPoupanca} meses): R$ ${(calcularMontante(taxasAnuais.poupanca, tempoPoupanca, depositoMensal)-valorMeta)}</p>
         <p>Retabilidade (R$${contribPoupanca} por ${tempoMeses} meses): R$ ${(calcularMontante(taxasAnuais.poupanca, tempoMeses, contribPoupanca)-valorMeta)}</p>
 
         <h4>Selic (${taxasAnuais.selic}% ao ano):</h4>
         <p>Investimento mínimo (${tempoMeses} meses): R$ ${contribSelic}</p>
         <p>Contribuição mensal (${tempoSelic} meses): R$ ${depositoMensal}</p>
-        <p>Retabilidade (R$${depositoMensal} por ${tempoSelic} meses): R$ ${(calcularMontante(taxasAnuais.selic, tempoMeses, depositoMensal)-valorMeta)}</p>
+        <p>Retabilidade (R$${depositoMensal} por ${tempoSelic} meses): R$ ${(calcularMontante(taxasAnuais.selic, tempoSelic, depositoMensal)-valorMeta)}</p>
         <p>Retabilidade (R$${contribSelic} por ${tempoMeses} meses): R$ ${(calcularMontante(taxasAnuais.selic, tempoMeses, contribSelic)-valorMeta)}</p>
 
         <h4>CDBs de Liquidez Diária (${taxasAnuais.cdb}% ao ano):</h4>
         <p>Investimento mínimo (${tempoMeses} meses): R$ ${contribCDB}</p>
         <p>Contribuição Mensal (R$${depositoMensal} por ${tempoMeses} meses): R$ ${depositoMensal}</p>
-        <p>Retabilidade (R$${depositoMensal} por ${tempoCDB} meses): R$ ${(calcularMontante(taxasAnuais.cdb, tempoMeses, depositoMensal)-valorMeta)}</p>
+        <p>Retabilidade (R$${depositoMensal} por ${tempoCDB} meses): R$ ${(calcularMontante(taxasAnuais.cdb, tempoCDB, depositoMensal)-valorMeta)}</p>
         <p>Retabilidade (R$${contribCDB} por ${tempoMeses} meses): R$ ${(calcularMontante(taxasAnuais.cdb, tempoMeses,contribCDB)-valorMeta)}</p>
 
         <h4>Fundos DI (${taxasAnuais.fundosDI}% ao ano):</h4>
         <p>Investimento mínimo (${tempoMeses} meses): R$ ${contribFundosDI}</p>
         <p>Contribuição mensal(${tempoFundosDI} meses): R$ ${depositoMensal}</p>
-        <p>Retabilidade (R$${depositoMensal} por ${tempoFundosDI} meses): R$ ${(calcularMontante(taxasAnuais.fundosDI, tempoMeses, depositoMensal)-valorMeta)}</p>
+        <p>Retabilidade (R$${depositoMensal} por ${tempoFundosDI} meses): R$ ${(calcularMontante(taxasAnuais.fundosDI, tempoFundosDI, depositoMensal)-valorMeta)}</p>
         <p>Retabilidade (R$${contribFundosDI} por ${tempoMeses} meses): R$ ${(calcularMontante(taxasAnuais.fundosDI, tempoMeses, contribFundosDI)-valorMeta)}</p>`;
 }
