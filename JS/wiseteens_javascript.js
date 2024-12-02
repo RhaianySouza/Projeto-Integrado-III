@@ -43,8 +43,8 @@ function calcularInvestimentos(event) {
         for (let i = 0; i < tempo; i++) {
             montante = (montante + depositoMensal) * (1+taxa/100/12);
         }
-        console.log(montante);
-        return montante.toFixed(2);
+        console.log((montante).toFixed(2));
+        return (montante).toFixed(2);
     }
 
     // Taxas de retorno anuais para cada tipo de investimento
