@@ -1,5 +1,6 @@
 function calcularInvestimentos(event) {
     event.preventDefault();
+    const inicial = 1000;
     const valorMeta = parseFloat(document.getElementById('valor').value);
     const tempoMeses = parseInt(document.getElementById('tempo').value);
     const depositoMensal = parseFloat(document.getElementById('contribuicao').value);
@@ -39,7 +40,7 @@ function calcularInvestimentos(event) {
     }
     // Retabilide do investimento no prazo
     function calcularMontante(taxa, tempo, depositoMensal) {
-        let montante = 0;
+        let montante = inicial;
         for (let i = 0; i < tempo; i++) {
             montante = (montante + depositoMensal) * (1+taxa/100/12);
         }
