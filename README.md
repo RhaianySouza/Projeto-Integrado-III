@@ -11,8 +11,4 @@ A plataforma oferece:
 
 O Wise Teens busca empoderar os jovens com conhecimentos financeiros para desenvolver uma mentalidade de longo prazo sobre economia e investimentos.
 <a href="https://rhaianysouza.github.io/Projeto-Integrado-III/" target="top">Clique aqui para visualiza</a>
-
-
-https://www.canva.com/design/DAGYXu-A32o/ePFWshwbg8dmELw4x6oC1g/edit?utm_content=DAGYXu-A32o&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
-
  
