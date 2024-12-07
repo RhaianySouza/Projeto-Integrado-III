@@ -46,7 +46,7 @@ defina metas e explore conteúdos interativos para alcançar seus objetivos fina
 
 <!--DOC EXTERNOS-->
 <script src='../../JS/wiseteens_javascript.js' defer></script>
-<link rel="stylesheet" href="../../CSS/wiseteens_style.css"></link>
+<link rel="stylesheet" href="../../CSS/wiseteens_style._01.css"></link>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
 <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
  
@@ -99,6 +99,14 @@ defina metas e explore conteúdos interativos para alcançar seus objetivos fina
         background: #ff5e2c;
         color: var(--cor1);
     }
+    form .question label~p{
+        display: none;
+    }
+    form .question label~p:before{
+        content: 'EXPLICAÇÃO: ';
+        font-weight: bold;
+        color:#ff5e2c;
+    }
     </style>
     <script>
 const respostasCorretas = {
@@ -109,6 +117,7 @@ const respostasCorretas = {
 function verificarRespostas() {
     const form = document.getElementById('quizForm');
     const resultDiv = document.getElementById('result');
+    const q = document.getElementsByClassName('question');
     let pontuacao = 0;
     let total = Object.keys(respostasCorretas).length;
 
@@ -118,7 +127,9 @@ function verificarRespostas() {
             pontuacao++;
         }
     }
-
+    for(var i = 0; i<q.length; i++){
+        q[i].getElementsByTagName('p')[1].style.display = 'block';
+    }
     resultDiv.innerHTML = `
         <h2>Resultado</h2><hr style="border-color: #ff5e2c;"/>
         <p>Você acertou <strong>${pontuacao}</strong> de <strong>${total}</strong> questões.</p>
@@ -163,6 +174,7 @@ function verificarRespostas() {
                     <label><input type="radio" name="q1" value="C"> C) O ato de aplicar seu dinheiro com o objetivo de obter um retorno maior no futuro</label><br>
                     <label><input type="radio" name="q1" value="D"> D) Um tipo de conta bancária</label><br>
                     <label><input type="radio" name="q1" value="E"> E) Um tipo de empréstimo</label>
+                    <p><b>Investimento:</b> Refere-se ao ato de aplicar seu dinheiro com a expectativa de que ele traga um retorno no futuro. Exemplo: comprar ações ou títulos.</p>
                 </div>
                 <div class="question">
                     <p>2. Qual é o principal objetivo de investir?</p>
@@ -171,6 +183,7 @@ function verificarRespostas() {
                     <label><input type="radio" name="q2" value="C"> C) Comprar coisas caras no presente</label><br>
                     <label><input type="radio" name="q2" value="D"> D) Guardar dinheiro sem nenhum risco</label><br>
                     <label><input type="radio" name="q2" value="E"> E) Fazer compras online</label>
+                    <p><b>Objetivo de investir:</b> O principal objetivo de um investimento é gerar um retorno financeiro ao longo do tempo, aumentando o valor inicial aplicado.</p>
                 </div>
                 <div class="question">
                     <p>3. O que significa a sigla "CDB"?</p>
@@ -179,6 +192,7 @@ function verificarRespostas() {
                     <label><input type="radio" name="q3" value="C"> C) Caixa de Débitos Bancários</label><br>
                     <label><input type="radio" name="q3" value="D"> D) Conta de Depósitos Bancários</label><br>
                     <label><input type="radio" name="q3" value="E"> E) Câmbio de Débito Bancário</label>
+                    <p><b>CDB:</b> Sigla de "Certificado de Depósito Bancário", um título emitido por bancos para captar recursos, oferecendo uma rentabilidade ao investidor.</p>
                 </div>
                 <div class="question">
                     <p>4. Qual é a característica principal da poupança?</p>
@@ -187,6 +201,7 @@ function verificarRespostas() {
                     <label><input type="radio" name="q4" value="C"> C) Alta volatilidade</label><br>
                     <label><input type="radio" name="q4" value="D"> D) Possibilidade de perdas significativas</label><br>
                     <label><input type="radio" name="q4" value="E"> E) Não tem liquidez</label>
+                    <p><b>Poupança:</b> Caracteriza-se por um rendimento baixo e fixo, com baixo risco, sendo uma opção mais conservadora de investimento.</p>
                 </div>
                 <div class="question">
                     <p>5. O que é uma ação?</p>
@@ -195,6 +210,7 @@ function verificarRespostas() {
                     <label><input type="radio" name="q5" value="C"> C) Um tipo de conta bancári</label><br>
                     <label><input type="radio" name="q5" value="D"> D) Um empréstimo que você faz ao banco</label><br>
                     <label><input type="radio" name="q5" value="E"> E) Um tipo de seguro</label>
+                    <p><b>Ação:</b> Uma ação é uma parte do capital social de uma empresa, que pode ser comprada e vendida na bolsa de valores. Quem compra ações se torna sócio da empresa.</p>
                 </div>
                 <div class="question">
                     <p>6. Qual é o risco principal de investir em ações?</p>
@@ -203,6 +219,7 @@ function verificarRespostas() {
                     <label><input type="radio" name="q6" value="C"> C) O risco de receber o valor investido de volta sem alteração</label><br>
                     <label><input type="radio" name="q6" value="D"> D) O risco de taxas de juros muito baixas</label><br>
                     <label><input type="radio" name="q6" value="E"> E) O risco de não poder retirar o dinheiro a qualquer momento</label>
+                    <p><b>Risco das ações:</b> O maior risco de investir em ações é a possibilidade de perder dinheiro, pois seu valor pode variar bastante.</p>
                 </div>
                 <div class="question">
                     <p>7. O que significa a sigla "IPCA"?</p>
@@ -211,6 +228,7 @@ function verificarRespostas() {
                     <label><input type="radio" name="q7" value="C"> C) Índice de Preço do Câmbio Atual</label><br>
                     <label><input type="radio" name="q7" value="D"> D) Índice de Pagamento de Contas Ativas</label><br>
                     <label><input type="radio" name="q7" value="E"> E) Índice de Participação no Comércio Amplo</label>
+                    <p><b>IPCA:</b> Índice de Preços ao Consumidor Amplo, utilizado para medir a inflação no Brasil, ou seja, o aumento dos preços dos bens e serviços.</p>
                 </div>
                 <div class="question">
                     <p>8. O que são "fundos imobiliários"?</p>
@@ -219,6 +237,7 @@ function verificarRespostas() {
                     <label><input type="radio" name="q8" value="C"> C) Fundos que emprestam dinheiro para empresas</label><br>
                     <label><input type="radio" name="q8" value="D"> D) Fundos que compram imóveis para revenda apenas</label><br>
                     <label><input type="radio" name="q8" value="E"> E) Fundos que aplicam em moedas estrangeiras</label>
+                    <p><b>Fundos imobiliários:</b> São fundos que investem em imóveis ou em ativos do mercado imobiliário, com o objetivo de gerar renda para os investidores.</p>
                 </div>
                 <div class="question">
                     <p>9. O que significa "rentabilidade" de um investimento?</p>
@@ -227,6 +246,7 @@ function verificarRespostas() {
                     <label><input type="radio" name="q9" value="C"> C) O retorno financeiro que você recebe sobre o valor investido</label><br>
                     <label><input type="radio" name="q9" value="D"> D) O risco envolvido no investimento</label><br>
                     <label><input type="radio" name="q9" value="E"> E) O valor que o banco cobra pelo investimento</label>
+                    <p><b>Rentabilidade:</b> Refere-se ao retorno financeiro que um investimento gera sobre o valor investido, podendo ser positivo (lucro) ou negativo (prejuízo).</p>
                 </div>
                 <div class="question">
                     <p>10. O que é "liquidez" em um investimento?</p>
@@ -235,6 +255,7 @@ function verificarRespostas() {
                     <label><input type="radio" name="q10" value="C"> C) A quantidade de dinheiro necessário para fazer o investimento</label><br>
                     <label><input type="radio" name="q10" value="D"> D) O tempo que o investimento demora para gerar lucro</label><br>
                     <label><input type="radio" name="q10" value="E"> E) O número de ações disponíveis para compra</label>
+                    <p><b>Liquidez:</b> A liquidez de um investimento é a facilidade com que ele pode ser convertido em dinheiro sem grandes perdas de valor.</p>
                 </div>
                 <div class="question">
                     <p>11. Qual é a principal vantagem de um investimento de baixo risco?</p>
@@ -243,6 +264,7 @@ function verificarRespostas() {
                     <label><input type="radio" name="q11" value="C"> C) Menor possibilidade de perder dinheiro</label><br>
                     <label><input type="radio" name="q11" value="D"> D) Maior garantia de lucros rápidos</label><br>
                     <label><input type="radio" name="q11" value="E"> E) Menor cobrança de impostos</label>
+                    <p><b>Vantagem de baixo risco:</b> Investimentos de baixo risco têm uma menor chance de resultar em perdas financeiras, oferecendo mais segurança para os investidores.</p>
                 </div>
                 <div class="question">
                     <p>12. O que é o "Tesouro Direto"?</p>
@@ -251,6 +273,7 @@ function verificarRespostas() {
                     <label><input type="radio" name="q12" value="C"> C) Ações de empresas privadas</label><br>
                     <label><input type="radio" name="q12" value="D"> D) Fundos de investimentos internacionais</label><br>
                     <label><input type="radio" name="q12" value="E"> E) Títulos bancários emitidos por empresas</label>
+                    <p><b>Tesouro Direto:</b> São títulos públicos emitidos pelo governo brasileiro para financiar suas dívidas. Eles são uma forma segura de investimento.</p>
                 </div>
                 <div class="question">
                     <p>13. O que é "diversificação" de investimentos?</p>
@@ -259,6 +282,7 @@ function verificarRespostas() {
                     <label><input type="radio" name="q13" value="C"> C) Investir apenas em imóveis</label><br>
                     <label><input type="radio" name="q13" value="D"> D) Comprar ações de apenas uma empresa</label><br>
                     <label><input type="radio" name="q13" value="E"> E) Manter todo o dinheiro na poupança</label>
+                    <p><b>Diversificação:</b> Diversificar significa espalhar os investimentos em diferentes ativos, reduzindo os riscos ao não concentrar tudo em um único tipo de investimento.</p>
                 </div>
                 <div class="question">
                     <p>14. O que significa "juros compostos"?</p>
@@ -267,6 +291,7 @@ function verificarRespostas() {
                     <label><input type="radio" name="q14" value="C"> C) Juros que não mudam com o tempo</label><br>
                     <label><input type="radio" name="q14" value="D"> D) Juros pagos diretamente ao investidor</label><br>
                     <label><input type="radio" name="q14" value="E"> E) Juros que são pagos a cada 30 dias</label>
+                    <p><b>Juros compostos:</b> São os juros calculados sobre o valor original investido mais os juros acumulados ao longo do tempo, gerando um efeito "bola de neve" no crescimento do valor investido.</p>
                 </div>
                 <div class="question">
                     <p>15. O que é um "CDB de liquidez diária"?</p>
@@ -275,6 +300,7 @@ function verificarRespostas() {
                     <label><input type="radio" name="q15" value="C"> C) Um tipo de título de renda fixa que pode ser resgatado a qualquer momento</label><br>
                     <label><input type="radio" name="q15" value="D"> D) Um investimento em criptomoedas</label><br>
                     <label><input type="radio" name="q15" value="E"> E) Um investimento em imóveis</label>
+                    <p><b>CDB de liquidez diária:</b> Um título de renda fixa que oferece ao investidor a possibilidade de resgatar seu dinheiro a qualquer momento, sem grandes perdas.</p>
                 </div>
                 <div class="question">
                     <p>16. Qual é a principal vantagem de investir em "fundos DI"?</p>
@@ -283,6 +309,7 @@ function verificarRespostas() {
                     <label><input type="radio" name="q16" value="C"> C) Possibilidade de altos lucros rápidos</label><br>
                     <label><input type="radio" name="q16" value="D"> D) Investimento em ações de empresas de grande porte</label><br>
                     <label><input type="radio" name="q16" value="E"> E) Não é necessário pagar impostos</label>
+                    <p><b>Fundos DI:</b> São fundos de baixo risco, que aplicam em títulos públicos ou privados de renda fixa e oferecem uma rentabilidade estável, geralmente próxima à taxa Selic.</p>
                 </div>
                 <div class="question">
                     <p>17. O que significa "rendimento fixo"?</p>
@@ -291,6 +318,7 @@ function verificarRespostas() {
                     <label><input type="radio" name="q17" value="C"> C) O retorno varia de acordo com o mercado</label><br>
                     <label><input type="radio" name="q17" value="D"> D) O retorno depende da performance de ações no mercado</label><br>
                     <label><input type="radio" name="q17" value="E"> E)  O valor do investimento aumenta a cada dia</label>
+                    <p><b>Rendimento fixo:</b> Refere-se a investimentos que oferecem um retorno garantido e previsível ao longo do tempo, sem variação significativa.</p>
                 </div>
                 <div class="question">
                     <p>18. O que é "volatilidade" em investimentos?</p>
@@ -299,6 +327,7 @@ function verificarRespostas() {
                     <label><input type="radio" name="q18" value="C"> C) A variação no valor de um ativo ao longo do tempo</label><br>
                     <label><input type="radio" name="q18" value="D"> D) A segurança de um investimento</label><br>
                     <label><input type="radio" name="q18" value="E"> E) O valor fixo que o investidor recebe</label>
+                    <p><b>Volatilidade:</b> A volatilidade é a variação no valor de um ativo ao longo do tempo. Quanto maior a volatilidade, maior o risco de perda ou ganho.</p>
                 </div>
                 <div class="question">
                     <p>19. O que é uma "carteira de investimentos"?</p>
@@ -307,6 +336,7 @@ function verificarRespostas() {
                     <label><input type="radio" name="q19" value="C"> C) A quantidade de ações de uma única empresa</label><br>
                     <label><input type="radio" name="q19" value="D"> D) Um tipo de conta bancária exclusiva para investimentos</label><br>
                     <label><input type="radio" name="q19" value="E"> E) O saldo bancário de um investidor</label>
+                    <p><b>Carteira de investimentos:</b> É o conjunto de ativos que um investidor possui, como ações, títulos e fundos, com o objetivo de atingir seus objetivos financeiros.</p>
                 </div>
                 <div class="question">
                     <p>20. Qual é a principal desvantagem de investir em ações?</p>
@@ -315,6 +345,7 @@ function verificarRespostas() {
                     <label><input type="radio" name="q20" value="C"> C) Não é necessário estudar o mercado</label><br>
                     <label><input type="radio" name="q20" value="D"> D) Possibilidade de ganhar muito dinheiro de forma rápida</label><br>
                     <label><input type="radio" name="q20" value="E"> E) Não exige nenhum esforço ou estratégia</label>
+                    <p><b>Desvantagem das ações:</b> Investir em ações pode resultar em perda de parte ou de todo o valor investido devido às flutuações do mercado.</p>
                 </div>
                 
         
