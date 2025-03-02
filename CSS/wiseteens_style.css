@@ -33,15 +33,11 @@ header{
 	position: relative;
 	z-index: 1;
 }
-.container{
-	margin: 0 auto;
-	display: flex;
-    	margin: 0 auto;
-}
 .container:nth-child(1){
 	grid-template-columns: repeat(12, 1fr);
 	gap: 10px;
 	width: 100%;
+	margin: 0 auto;
 }
 .container h2{
 	text-align: center;
