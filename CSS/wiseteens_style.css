@@ -31,7 +31,7 @@ header{
     background-size: 100%;
     min-height: 400px;
 }
-.container{
+.container:nth-child(1){
 	display: grid;
 	grid-template-columns: repeat(12, 1fr);
 	gap: 10px;
@@ -123,6 +123,14 @@ nav div#about a{
 header .container img#logo{
 	width: 300px;
 	grid-column: 1 / 6;
+}
+
+header .container #imageBanner{
+    background-image: url(./IMAGE/image_head.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: -webkit-fill-available;
+    height: 305px;
 }
 header a#button{
 	display: block;
