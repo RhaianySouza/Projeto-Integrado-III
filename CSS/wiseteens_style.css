@@ -29,7 +29,7 @@ h1,h2,h3,h4,h5,h6{
 header{
 	background: url(../IMAGE/wallpaper.png) center;
 	background-size: 100%;
-	min-height: 400px;
+	min-height: 500px;
 	position: relative;
 	z-index: 1;
 }
@@ -134,7 +134,7 @@ header .container #imageBanner{
     width: -webkit-fill-available;
     height: 400px;
     position: absolute;
-    top: 0;
+    bottom: 0;
     z-index: -1;
 }
 header a#button{
